@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Caída de Conversión en Proceso de Checkout</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #7f8c8d;
+        }
+        .context-box {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .context-box ul {
+            margin: 10px 0;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .critical {
+            background-color: #f8d7da;
+            padding: 15px;
+            border-left: 4px solid #dc3545;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .success {
+            background-color: #d4edda;
+            padding: 15px;
+            border-left: 4px solid #28a745;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .info {
+            background-color: #d1ecf1;
+            padding: 15px;
+            border-left: 4px solid #17a2b8;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .conclusion-box {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+        .conclusion-box h2 {
+            color: white;
+            border-left-color: #3498db;
+        }
+        .metric {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Análisis de Caída de Conversión en Proceso de Checkout</h1>
+        
+        <div class="context-box">
+            <h3>Contexto</h3>
+            <ul>
+                <li><strong>Producto:</strong> Proceso de compra activo en más de 60 países</li>
+                <li><strong>Usuarios:</strong> Más de 100.000 usuarios únicos/mes</li>
+                <li><strong>Problema detectado:</strong> Caída del 20% en conversión de carrito a compra en las últimas 2 semanas</li>
+                <li><strong>Periodo analizado:</strong> 24 septiembre - 24 octubre 2025</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <strong>🎯 Objetivo del Análisis:</strong> Identificar la causa raíz de la caída en la tasa de conversión.
+        </div>
+
+        <h2>1. Análisis Temporal de la Conversión</h2>
+        
+        <p>Al analizar la evolución diaria de las métricas clave, se observa un cambio abrupto y significativo en la tasa de conversión y en el tiempo promedio de checkout.</p>
+        
+        <img src="https://raw.githubusercontent.com/rifer/conversion_notebook/main/imagenes_analisis/grafico1_evolucion_temporal.png" alt="Evolución temporal de conversión">
+        
+        <div class="critical">
+            <strong>📊 OBSERVACIÓN CRÍTICA:</strong><br>
+            Se observa un cambio abrupto el <strong>8 de octubre de 2025</strong> en ambas métricas:
+            <ul>
+                <li>La tasa de conversión cae drásticamente</li>
+                <li>El tiempo de checkout aumenta significativamente</li>
+            </ul>
+        </div>
+
+        <h2>2. Comparación: Antes vs Después del 8 de Octubre</h2>
+        
+        <p>Se realiza un análisis comparativo dividiendo los datos en dos periodos: antes y después del 8 de octubre.</p>
+        
+        <img src="https://raw.githubusercontent.com/rifer/conversion_notebook/main/imagenes_analisis/grafico2_comparacion_periodos.png" alt="Comparación de periodos">
+        
+        <div class="info">
+            <h3>📈 Métricas Comparativas</h3>
+            <table>
+                <tr>
+                    <th>Periodo</th>
+                    <th>Conversión Promedio</th>
+                    <th>Tiempo Promedio (seg)</th>
+                </tr>
+                <tr>
+                    <td><strong>Antes (v2.3)</strong></td>
+                    <td class="metric">75.5%</td>
+                    <td>~107 segundos</td>
+                </tr>
+                <tr>
+                    <td><strong>Después (v2.4)</strong></td>
+                    <td class="metric">57.5%</td>
+                    <td>~179 segundos</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="critical">
+            <h3>⚠️ CAMBIOS PORCENTUALES</h3>
+            <ul>
+                <li><strong>📉 Caída en conversión:</strong> <span class="metric">-23.8%</span> (aproximadamente 20% respecto al baseline)</li>
+                <li><strong>⏱️ Aumento en tiempo de checkout:</strong> <span class="metric">+67%</span></li>
+                <li><strong>👥 Impacto en usuarios:</strong> Aproximadamente 1,000+ usuarios perdidos por día</li>
+            </ul>
+        </div>
+
+        <h2>3. Análisis por Versión de Checkout</h2>
+        
+        <p>El análisis revela que existe una correlación directa entre la versión del proceso de checkout y la tasa de conversión.</p>
+        
+        <div class="critical">
+            <h3>🔍 HALLAZGO CLAVE</h3>
+            <p>La versión <code>v2.4</code> fue introducida el <strong>8 de octubre de 2025</strong></p>
+            <br>
+            <p><strong>⚠️ IMPACTO DE LA VERSIÓN v2.4:</strong></p>
+            <ul>
+                <li>Conversión cayó de <strong>75.5%</strong> a <strong>57.5%</strong> (caída del ~24%)</li>
+                <li>Tiempo de checkout aumentó de <strong>~107s</strong> a <strong>~179s</strong> (aumento del ~67%)</li>
+                <li>Esto representa aproximadamente una <strong>caída del 20%</strong> respecto al baseline</li>
+            </ul>
+        </div>
+
+        <h2>4. Análisis por Plataforma</h2>
+        
+        <p>Para descartar problemas específicos de plataforma, se analiza el comportamiento en Web, iOS y Android.</p>
+        
+        <img src="https://raw.githubusercontent.com/rifer/conversion_notebook/main/imagenes_analisis/grafico3_plataformas.png" alt="Análisis por plataforma">
+        
+        <div class="info">
+            <strong>📱 CONCLUSIÓN:</strong><br>
+            El impacto negativo se observa de manera <strong>consistente en TODAS las plataformas</strong> (Web, iOS, Android).<br>
+            Esto descarta problemas específicos de plataforma y confirma que el problema es el cambio en el proceso.
+        </div>
+
+        <h2>5. Análisis Geográfico</h2>
+        
+        <p>Se examina el comportamiento en los 10 países con mayor volumen de transacciones.</p>
+        
+        <img src="https://raw.githubusercontent.com/rifer/conversion_notebook/main/imagenes_analisis/grafico4_paises.png" alt="Análisis por países">
+        
+        <div class="info">
+            <strong>🌍 CONCLUSIÓN:</strong><br>
+            El impacto negativo es <strong>global</strong> y afecta a TODOS los países de manera similar.<br>
+            Esto confirma que no es un problema regional o de localización.
+        </div>
+
+        <h2>6. Correlación entre Tiempo de Checkout y Conversión</h2>
+        
+        <img src="https://raw.githubusercontent.com/rifer/conversion_notebook/main/imagenes_analisis/grafico5_correlacion.png" alt="Correlación tiempo vs conversión">
+        
+        <div class="highlight">
+            <strong>📊 HALLAZGO:</strong> Existe una <strong>correlación negativa fuerte</strong> entre el tiempo de checkout y la conversión.<br>
+            <strong>A mayor tiempo de checkout, menor conversión.</strong>
+        </div>
+
+        <div class="conclusion-box">
+            <h2>🎯 CONCLUSIONES FINALES</h2>
+            
+            <h3>✅ CAUSA RAÍZ IDENTIFICADA:</h3>
+            <p>La caída del 20% en la conversión está <strong>directamente relacionada</strong> con la implementación de la <strong>versión v2.4</strong> del proceso de checkout.</p>
+            
+            <h3>📅 FECHA DEL CAMBIO:</h3>
+            <p><strong>8 de octubre de 2025</strong> (hace 2 semanas y media)</p>
+            
+            <h3>📉 IMPACTO MEDIDO:</h3>
+            <ul>
+                <li>Conversión ANTES (v2.3): <strong>75.5%</strong></li>
+                <li>Conversión DESPUÉS (v2.4): <strong>57.5%</strong></li>
+                <li>Caída porcentual: <strong>~24%</strong> (aproximadamente 20% respecto al baseline)</li>
+            </ul>
+            
+            <h3>⏱️ TIEMPO DE CHECKOUT:</h3>
+            <ul>
+                <li>ANTES: <strong>~107 segundos</strong> promedio</li>
+                <li>DESPUÉS: <strong>~179 segundos</strong> promedio</li>
+                <li>Aumento: <strong>+67%</strong></li>
+            </ul>
+            
+            <h3>🌐 ALCANCE:</h3>
+            <ul>
+                <li>✓ Afecta a <strong>TODAS</strong> las plataformas (Web, iOS, Android)</li>
+                <li>✓ Afecta a <strong>TODOS</strong> los países</li>
+                <li>✓ Afecta a <strong>TODOS</strong> los métodos de pago</li>
+                <li>✓ Impacto <strong>global y consistente</strong></li>
+            </ul>
+            
+            <h3>💡 EVIDENCIA:</h3>
+            <ol>
+                <li>Cambio <strong>abrupto y simultáneo</strong> en todas las métricas el 8 de octubre</li>
+                <li><strong>Correlación directa</strong> entre versión de checkout y conversión</li>
+                <li><strong>Aumento significativo</strong> en tiempo de procesamiento</li>
+                <li><strong>Ausencia</strong> de otros factores externos que expliquen el cambio</li>
+            </ol>
+            
+            <h3>🔧 RECOMENDACIÓN:</h3>
+            <p>Realizar una <strong>revisión exhaustiva</strong> de los cambios introducidos en la <strong>versión v2.4</strong> del proceso de checkout, especialmente aquellos que puedan estar añadiendo <strong>fricción o pasos adicionales</strong> en el flujo de compra.</p>
+        </div>
+
+        <div class="highlight">
+            <p><strong>Fecha del análisis:</strong> 24 de octubre de 2025</p>
+            <p><strong>Dataset:</strong> 3,348 registros | 36 países | 3 plataformas | Periodo: 24 sept - 24 oct 2025</p>
+        </div>
+    </div>
+</body>
+</html>
